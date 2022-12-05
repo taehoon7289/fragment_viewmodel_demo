@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/main_fragment">
+
+    <fragment
+        android:id="@+id/main_fragment"
+        android:name="com.minikode.fragment_viewmodel_demo.ui.main.MainFragment"
+        android:label="main">
+        <action
+            android:id="@+id/main_to_second"
+            app:destination="@id/second_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/second_fragment"
+        android:name="com.minikode.fragment_viewmodel_demo.ui.main.SecondFragment"
+        android:label="second">
+        <action
+            android:id="@+id/second_to_main"
+            app:destination="@id/main_fragment" />
+        <action
+            android:id="@+id/second_to_third"
+            app:destination="@id/third_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/third_fragment"
+        android:name="com.minikode.fragment_viewmodel_demo.ui.main.ThirdFragment"
+        android:label="third">
+        <action
+            android:id="@+id/third_to_second"
+            app:destination="@id/second_fragment" />
+        <action
+            android:id="@+id/third_to_fourth"
+            app:destination="@id/fourth_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fourth_fragment"
+        android:name="com.minikode.fragment_viewmodel_demo.ui.main.FourthFragment"
+        android:label="fourth">
+        <action
+            android:id="@+id/fourth_to_third"
+            app:destination="@id/third_fragment" />
+    </fragment>
+
+
+</navigation>
