@@ -5,7 +5,7 @@
 
         <variable
             name="model"
-            type="com.minikode.fragment_viewmodel_demo.ui.main.FragmentViewModel" />
+            type="com.minikode.fragment_viewmodel_demo.ui.like.LikeViewModel" />
     </data>
 
     <LinearLayout
@@ -18,7 +18,7 @@
             android:id="@+id/text_view_size"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{`현재 백큐사이즈 : ` + model.size}"
+            android:text="@{`현재 백스택사이즈 : ` + model.size}"
             android:textSize="20sp" />
 
         <TextView

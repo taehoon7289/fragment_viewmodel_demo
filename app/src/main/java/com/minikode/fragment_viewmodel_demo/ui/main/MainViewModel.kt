@@ -7,7 +7,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class FragmentViewModel @Inject constructor() : ViewModel() {
+class MainViewModel @Inject constructor() : ViewModel() {
     private var _count: MutableLiveData<Long> = MutableLiveData(0)
     val count: LiveData<Long>
         get() = _count

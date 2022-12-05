@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_graph"
+    android:id="@+id/nav_graph_main"
     app:startDestination="@id/main_fragment">
 
     <fragment
         android:id="@+id/main_fragment"
-        android:name="com.minikode.fragment_viewmodel_demo.ui.main.MainFragment"
+        android:name="com.minikode.fragment_viewmodel_demo.ui.main.fragment.MainFragment"
         android:label="main">
         <action
             android:id="@+id/main_to_second"
@@ -15,7 +15,7 @@
 
     <fragment
         android:id="@+id/second_fragment"
-        android:name="com.minikode.fragment_viewmodel_demo.ui.main.SecondFragment"
+        android:name="com.minikode.fragment_viewmodel_demo.ui.main.fragment.SecondFragment"
         android:label="second">
         <action
             android:id="@+id/second_to_main"
@@ -26,7 +26,7 @@
     </fragment>
     <fragment
         android:id="@+id/third_fragment"
-        android:name="com.minikode.fragment_viewmodel_demo.ui.main.ThirdFragment"
+        android:name="com.minikode.fragment_viewmodel_demo.ui.main.fragment.ThirdFragment"
         android:label="third">
         <action
             android:id="@+id/third_to_second"
@@ -37,7 +37,7 @@
     </fragment>
     <fragment
         android:id="@+id/fourth_fragment"
-        android:name="com.minikode.fragment_viewmodel_demo.ui.main.FourthFragment"
+        android:name="com.minikode.fragment_viewmodel_demo.ui.main.fragment.FourthFragment"
         android:label="fourth">
         <action
             android:id="@+id/fourth_to_third"

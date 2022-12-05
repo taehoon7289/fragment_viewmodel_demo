@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.minikode.fragment_viewmodel_demo.ui.main.MainViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/text_view_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{`현재 백스택사이즈 : ` + model.size}"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/text_view_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{model.label}"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/text_view_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{model.count + ``}"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/button_plus_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PLUS button"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/button_minus_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MINUS button"
+            android:textSize="16sp" />
+    </LinearLayout>
+</layout>

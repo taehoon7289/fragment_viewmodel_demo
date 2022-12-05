@@ -1,10 +1,12 @@
-package com.minikode.fragment_viewmodel_demo.ui.main
+package com.minikode.fragment_viewmodel_demo.ui.main.fragment
 
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.minikode.fragment_viewmodel_demo.BaseFragment
 import com.minikode.fragment_viewmodel_demo.R
 import com.minikode.fragment_viewmodel_demo.databinding.FragmentMainBinding
+import com.minikode.fragment_viewmodel_demo.ui.main.MainViewModel
+import com.minikode.fragment_viewmodel_demo.ui.main.MainActivity
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -13,11 +15,11 @@ class MainFragment @Inject constructor() : BaseFragment<FragmentMainBinding>() {
 
     override val layoutRes: Int = R.layout.fragment_main
 
-    private val fragmentViewModel: FragmentViewModel by activityViewModels()
+    private val mainViewModel: MainViewModel by activityViewModels()
 
     override fun initView() {
 
-        fragmentViewModel.setLabel("메인 페이지")
+        mainViewModel.setLabel("메인 페이지")
 
         (activity as MainActivity).checkSize()
 
@@ -25,13 +27,13 @@ class MainFragment @Inject constructor() : BaseFragment<FragmentMainBinding>() {
 
             with(includeComponent) {
 
-                model = fragmentViewModel
+                model = mainViewModel
                 buttonPlusCount.setOnClickListener {
-                    fragmentViewModel.plus()
+                    mainViewModel.plus()
                 }
 
                 buttonMinusCount.setOnClickListener {
-                    fragmentViewModel.minus()
+                    mainViewModel.minus()
                 }
             }
 

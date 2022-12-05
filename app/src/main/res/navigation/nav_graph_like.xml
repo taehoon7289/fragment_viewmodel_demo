@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph_like"
+    app:startDestination="@id/like_first_fragment">
+
+    <fragment
+        android:id="@+id/like_first_fragment"
+        android:name="com.minikode.fragment_viewmodel_demo.ui.like.fragment.LikeFirstFragment"
+        android:label="first">
+        <action
+            android:id="@+id/first_to_second"
+            app:destination="@id/like_second_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/like_second_fragment"
+        android:name="com.minikode.fragment_viewmodel_demo.ui.like.fragment.LikeSecondFragment"
+        android:label="second">
+        <action
+            android:id="@+id/second_to_first"
+            app:destination="@id/like_first_fragment" />
+    </fragment>
+
+</navigation>
