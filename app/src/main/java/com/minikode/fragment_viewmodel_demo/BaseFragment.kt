@@ -1,9 +1,13 @@
 package com.minikode.fragment_viewmodel_demo
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.result.ActivityResult
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
@@ -29,5 +33,11 @@ abstract class BaseFragment<V : ViewDataBinding> : Fragment() {
 
     abstract fun initView()
 
+    fun createActivityResultLauncher(callbackResult: (ActivityResult) -> Unit): ActivityResultLauncher<Intent> {
+        return registerForActivityResult(
+            ActivityResultContracts.StartActivityForResult(),
+            callbackResult,
+        )
+    }
 
 }

@@ -15,7 +15,6 @@ class LikeActivity : BaseActivity<ActivityLikeBinding>() {
     private val likeViewModel: LikeViewModel by viewModels()
 
     override fun initView() {
-
     }
 
     fun checkSize() {

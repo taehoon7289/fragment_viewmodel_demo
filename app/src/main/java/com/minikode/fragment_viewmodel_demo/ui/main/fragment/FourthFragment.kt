@@ -1,5 +1,6 @@
 package com.minikode.fragment_viewmodel_demo.ui.main.fragment
 
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.minikode.fragment_viewmodel_demo.BaseFragment
@@ -16,6 +17,9 @@ class FourthFragment @Inject constructor() : BaseFragment<FragmentFourthBinding>
     override val layoutRes: Int = R.layout.fragment_fourth
 
     private val mainViewModel: MainViewModel by activityViewModels()
+
+    private val temp = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult()) {}
 
     override fun initView() {
 

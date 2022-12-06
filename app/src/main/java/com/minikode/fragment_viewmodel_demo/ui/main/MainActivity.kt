@@ -1,12 +1,8 @@
 package com.minikode.fragment_viewmodel_demo.ui.main
 
 import android.content.Intent
-import androidx.activity.result.contract.ActivityResultContracts
+import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.viewModels
-import androidx.navigation.Navigation
-import com.google.android.material.tabs.TabLayout
-import com.google.android.material.tabs.TabLayout.OnTabSelectedListener
-import com.google.android.material.tabs.TabLayoutMediator
 import com.minikode.fragment_viewmodel_demo.BaseActivity
 import com.minikode.fragment_viewmodel_demo.R
 import com.minikode.fragment_viewmodel_demo.databinding.ActivityMainBinding
@@ -22,18 +18,15 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
     private val mainViewModel: MainViewModel by viewModels()
 
-    private val startActivity = registerForActivityResult(
-        ActivityResultContracts.StartActivityForResult()
-    ) { result ->
-        Timber.d("startActivity result : $result")
-    }
-
+    private lateinit var likeActivityLauncher: ActivityResultLauncher<Intent>
 
     override fun initView() {
-
+        likeActivityLauncher = createActivityResultLauncher { activityResult ->
+            Timber.d("activityResult : $activityResult")
+        }
         with(binding) {
             buttonStartLikeActivity.setOnClickListener {
-                startLikeActivity()
+                likeActivityLauncher.launch(Intent(this@MainActivity, LikeActivity::class.java))
             }
         }
     }
@@ -45,7 +38,4 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         mainViewModel.setSize(size!!)
     }
 
-    private fun startLikeActivity() {
-        startActivity.launch(Intent(this, LikeActivity::class.java))
-    }
 }
