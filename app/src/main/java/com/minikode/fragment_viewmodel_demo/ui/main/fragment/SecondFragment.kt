@@ -48,18 +48,11 @@ class SecondFragment @Inject constructor() : BaseFragment<FragmentSecondBinding>
                 Timber.d("mainViewModel.tabIndex.value : ${mainViewModel.tabIndex.value}")
                 Timber.d("position : $position")
                 tab.text = tabTitleArray[position]
-//                if (mainViewModel.tabIndex.value == position) {
-//                    tab.select()
-//                }
             }.attach()
 
             tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
                 override fun onTabSelected(tab: TabLayout.Tab?) {
                     Timber.d("onTabSelected : $tab")
-//                    tab?.let {
-//                        mainViewModel.setTabIndex(it.position)
-//                    }
-
                 }
 
                 override fun onTabUnselected(tab: TabLayout.Tab?) {
