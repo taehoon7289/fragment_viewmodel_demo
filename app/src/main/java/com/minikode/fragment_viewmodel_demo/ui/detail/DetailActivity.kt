@@ -13,5 +13,8 @@ class DetailActivity : BaseActivity<ActivityDetailBinding>() {
 
     override fun initView() {
         binding.textViewTitle.setTextSize(Dimension.SP, 30f)
+        overridePendingTransition(R.anim.from_right, R.anim.to_left)
     }
+
+    override val backPressEndPointFlag: Boolean = false
 }

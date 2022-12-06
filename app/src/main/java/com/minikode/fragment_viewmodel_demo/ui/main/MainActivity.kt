@@ -16,6 +16,8 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
     override val layoutRes: Int = R.layout.activity_main
 
+    override val backPressEndPointFlag: Boolean = true
+
     private val mainViewModel: MainViewModel by viewModels()
 
     private lateinit var likeActivityLauncher: ActivityResultLauncher<Intent>

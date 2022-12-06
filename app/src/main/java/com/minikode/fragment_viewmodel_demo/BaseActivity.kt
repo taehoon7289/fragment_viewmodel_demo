@@ -9,12 +9,17 @@ import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
+import timber.log.Timber
 
 abstract class BaseActivity<View : ViewDataBinding> : AppCompatActivity() {
 
     protected lateinit var binding: View
 
     protected abstract val layoutRes: Int
+
+    protected abstract val backPressEndPointFlag: Boolean
+
+    private var backKeyPressedTime: Long = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,5 +45,25 @@ abstract class BaseActivity<View : ViewDataBinding> : AppCompatActivity() {
         )
     }
 
+    override fun onBackPressed() {
+        Timber.d("activity의 onBackPressed 동작!!!!!!")
+        if (backPressEndPointFlag) {
+            handlerEndPoint()
+        } else {
+            super.onBackPressed()
+        }
+    }
 
+    private fun handlerEndPoint() {
+        if (System.currentTimeMillis() > backKeyPressedTime + 2000) {
+            backKeyPressedTime = System.currentTimeMillis()
+            App.instance.showToast("\'뒤로\' 버튼을 한번 더 누르시면 종료됩니다.")
+            return
+        }
+        if (System.currentTimeMillis() <= backKeyPressedTime + 2000) {
+            finish()
+            App.instance.cancelToast()
+        }
+
+    }
 }

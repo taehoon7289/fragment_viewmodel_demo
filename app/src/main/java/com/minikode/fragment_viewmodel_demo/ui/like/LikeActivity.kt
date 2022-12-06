@@ -14,6 +14,8 @@ class LikeActivity : BaseActivity<ActivityLikeBinding>() {
 
     private val likeViewModel: LikeViewModel by viewModels()
 
+    override val backPressEndPointFlag: Boolean = false
+
     override fun initView() {
     }
 
