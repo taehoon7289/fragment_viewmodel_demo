@@ -10,7 +10,12 @@
         android:label="main">
         <action
             android:id="@+id/main_to_second"
-            app:destination="@id/second_fragment" />
+            app:destination="@id/second_fragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+
     </fragment>
 
     <fragment
@@ -19,10 +24,18 @@
         android:label="second">
         <action
             android:id="@+id/second_to_main"
-            app:destination="@id/main_fragment" />
+            app:destination="@id/main_fragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left" />
         <action
             android:id="@+id/second_to_third"
-            app:destination="@id/third_fragment" />
+            app:destination="@id/third_fragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
     </fragment>
     <fragment
         android:id="@+id/third_fragment"
@@ -30,10 +43,18 @@
         android:label="third">
         <action
             android:id="@+id/third_to_second"
-            app:destination="@id/second_fragment" />
+            app:destination="@id/second_fragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left" />
         <action
             android:id="@+id/third_to_fourth"
-            app:destination="@id/fourth_fragment" />
+            app:destination="@id/fourth_fragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
     </fragment>
     <fragment
         android:id="@+id/fourth_fragment"
@@ -41,7 +62,11 @@
         android:label="fourth">
         <action
             android:id="@+id/fourth_to_third"
-            app:destination="@id/third_fragment" />
+            app:destination="@id/third_fragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left" />
     </fragment>
 
 

@@ -1,12 +1,12 @@
 package com.minikode.fragment_viewmodel_demo.ui.main.fragment
 
 import androidx.fragment.app.activityViewModels
-import androidx.navigation.fragment.findNavController
+import androidx.navigation.Navigation
 import com.minikode.fragment_viewmodel_demo.BaseFragment
 import com.minikode.fragment_viewmodel_demo.R
 import com.minikode.fragment_viewmodel_demo.databinding.FragmentMainBinding
-import com.minikode.fragment_viewmodel_demo.ui.main.MainViewModel
 import com.minikode.fragment_viewmodel_demo.ui.main.MainActivity
+import com.minikode.fragment_viewmodel_demo.ui.main.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -37,10 +37,8 @@ class MainFragment @Inject constructor() : BaseFragment<FragmentMainBinding>() {
                 }
             }
 
-
-            buttonNextPage.setOnClickListener {
-                findNavController().navigate(R.id.main_to_second)
-            }
+            buttonNextPage.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.main_to_second))
+//            buttonNextPage.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.main_to_like))
 
         }
 

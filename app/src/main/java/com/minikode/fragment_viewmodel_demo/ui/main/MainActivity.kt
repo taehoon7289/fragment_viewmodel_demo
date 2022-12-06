@@ -3,6 +3,10 @@ package com.minikode.fragment_viewmodel_demo.ui.main
 import android.content.Intent
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
+import androidx.navigation.Navigation
+import com.google.android.material.tabs.TabLayout
+import com.google.android.material.tabs.TabLayout.OnTabSelectedListener
+import com.google.android.material.tabs.TabLayoutMediator
 import com.minikode.fragment_viewmodel_demo.BaseActivity
 import com.minikode.fragment_viewmodel_demo.R
 import com.minikode.fragment_viewmodel_demo.databinding.ActivityMainBinding
@@ -27,10 +31,11 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
     override fun initView() {
 
-        binding.buttonStartLikeActivity.setOnClickListener {
-            startLikeActivity()
+        with(binding) {
+            buttonStartLikeActivity.setOnClickListener {
+                startLikeActivity()
+            }
         }
-
     }
 
     fun checkSize() {

@@ -20,6 +20,10 @@ class MainViewModel @Inject constructor() : ViewModel() {
     val size: LiveData<Int>
         get() = _size
 
+    private var _tabIndex: MutableLiveData<Int> = MutableLiveData(0)
+    val tabIndex: LiveData<Int>
+        get() = _tabIndex
+
     fun plus() = run { _count.value = _count.value?.plus(1) }
     fun minus() = run { _count.value = _count.value?.minus(1) }
     fun setLabel(label: String) {
@@ -27,4 +31,5 @@ class MainViewModel @Inject constructor() : ViewModel() {
     }
 
     fun setSize(size: Int) = run { _size.value = size }
+    fun setTabIndex(tabIndex: Int) = run { _tabIndex.value = tabIndex }
 }
