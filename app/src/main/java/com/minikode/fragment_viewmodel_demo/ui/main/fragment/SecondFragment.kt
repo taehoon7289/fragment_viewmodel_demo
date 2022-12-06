@@ -45,8 +45,6 @@ class SecondFragment @Inject constructor() : BaseFragment<FragmentSecondBinding>
             })
 
             TabLayoutMediator(tabLayout, viewPager) { tab, position ->
-                Timber.d("mainViewModel.tabIndex.value : ${mainViewModel.tabIndex.value}")
-                Timber.d("position : $position")
                 tab.text = tabTitleArray[position]
             }.attach()
 
