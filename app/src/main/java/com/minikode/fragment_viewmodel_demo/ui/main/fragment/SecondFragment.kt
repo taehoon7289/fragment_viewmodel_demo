@@ -76,10 +76,16 @@ class SecondFragment @Inject constructor() : BaseFragment<FragmentSecondBinding>
 
             buttonPrevPage.setOnClickListener {
                 findNavController().navigate(R.id.second_to_main)
+//                activity?.supportFragmentManager?.beginTransaction()
+//                    ?.replace(R.id.container, mainViewModel.mainFragment.value!!)
+//                    ?.commitNow()
             }
 
             buttonNextPage.setOnClickListener {
                 findNavController().navigate(R.id.second_to_third)
+//                activity?.supportFragmentManager?.beginTransaction()
+//                    ?.replace(R.id.container, mainViewModel.thirdFragment.value!!)
+//                    ?.commitNow()
             }
         }
 

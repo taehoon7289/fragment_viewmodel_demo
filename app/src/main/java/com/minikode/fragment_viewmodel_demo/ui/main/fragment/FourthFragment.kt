@@ -45,6 +45,9 @@ class FourthFragment @Inject constructor() : BaseFragment<FragmentFourthBinding>
 
             buttonPrevPage.setOnClickListener {
                 findNavController().navigate(R.id.fourth_to_third)
+//                activity?.supportFragmentManager?.beginTransaction()
+//                    ?.replace(R.id.container, mainViewModel.thirdFragment.value!!)
+//                    ?.commitNow()
             }
         }
 

@@ -3,6 +3,7 @@ package com.minikode.fragment_viewmodel_demo.ui.main
 import android.content.Intent
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.viewModels
+import androidx.core.app.ActivityOptionsCompat
 import com.minikode.fragment_viewmodel_demo.BaseActivity
 import com.minikode.fragment_viewmodel_demo.R
 import com.minikode.fragment_viewmodel_demo.databinding.ActivityMainBinding
@@ -16,7 +17,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
     override val layoutRes: Int = R.layout.activity_main
 
-    override val backPressEndPointFlag: Boolean = true
+    override val backPressEndPointFlag: Boolean = false
 
     private val mainViewModel: MainViewModel by viewModels()
 
@@ -28,6 +29,10 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         }
         with(binding) {
             buttonStartLikeActivity.setOnClickListener {
+//                likeActivityLauncher.launch(Intent(this@MainActivity, LikeActivity::class.java),
+//                    ActivityOptionsCompat.makeCustomAnimation(this@MainActivity,
+//                        R.anim.from_right,
+//                        R.anim.to_left))
                 likeActivityLauncher.launch(Intent(this@MainActivity, LikeActivity::class.java))
             }
         }

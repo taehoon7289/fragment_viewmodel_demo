@@ -62,11 +62,12 @@
         android:label="fourth">
         <action
             android:id="@+id/fourth_to_third"
-            app:destination="@id/third_fragment"
             app:enterAnim="@anim/from_left"
             app:exitAnim="@anim/to_right"
             app:popEnterAnim="@anim/from_right"
-            app:popExitAnim="@anim/to_left" />
+            app:popExitAnim="@anim/to_left"
+            app:popUpTo="@id/second_fragment"
+            app:popUpToInclusive="false"/>
     </fragment>
 
 
