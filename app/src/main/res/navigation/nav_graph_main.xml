@@ -56,6 +56,7 @@
             app:popEnterAnim="@anim/from_left"
             app:popExitAnim="@anim/to_right" />
     </fragment>
+
     <fragment
         android:id="@+id/fourth_fragment"
         android:name="com.minikode.fragment_viewmodel_demo.ui.main.fragment.FourthFragment"
